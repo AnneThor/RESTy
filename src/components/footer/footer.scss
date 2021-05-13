@@ -1,18 +1,17 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #2d2625;
 
-#header {
+#footer {
   background-color: $primary-color;
   color: ivory;
-  font-size: 15px;
-  font-style: bold;
   position: fixed;
   width: 100vw;
-  top: 0;
+  bottom: 0;
   left: 0;
-  text-align: center;
-  height: 10vh;
-  max-height:10vh;
-  display: flex;
-  flex-direction: column;
+  text-align: right;
+}
+
+#footer p {
+  font-size: 12px;
+  margin-right: 10px;
 }

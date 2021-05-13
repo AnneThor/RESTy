@@ -1,0 +1,46 @@
+$primary-color: #2d2625;
+$button-color: #ddd;
+$text-color: #807a0a;
+
+#form {
+  text-align: center;
+  width: 80%;
+  padding-left: 10vw;
+}
+
+#form-url-input {
+  font-size: 20px;
+  margin: 5px 5px;
+}
+
+#form-url-input input {
+  width: 50%;
+  margin-right: 10px;
+}
+
+#url-input-label {
+  color: $text-color;
+  padding: 5px 0px;
+  font-family: sans-serif, Arial;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+#url-input, #url-submit {
+  color: $text-color;
+  display: inline-block;
+  background-color: #ddd;
+  padding: 5px 10px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+#radio-buttons {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
