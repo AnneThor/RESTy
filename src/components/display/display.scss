@@ -1,0 +1,13 @@
+$button-color: #ddd;
+$text-color: #807a0a;
+
+#display {
+  text-align: center;
+  margin: 10px 20% 0 20%;
+  border: 2px solid $text-color;
+  border-radius: 3px;
+  padding: 20px 20px;
+  min-height: 40%;
+  background-color: darken(ivory, 1.5%);
+  color: darken($text-color, 3%);
+}

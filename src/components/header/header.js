@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './header.scss';
 
 class Header extends Component {
 
@@ -9,7 +10,9 @@ class Header extends Component {
 
   render() {
       return (
-        <h1>RESTy</h1>
+        <div id="header">
+          <h1>RESTy</h1>
+        </div>
       )
   }
 

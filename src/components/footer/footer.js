@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './footer.scss';
 
 class Footer extends Component {
 
@@ -9,7 +10,9 @@ class Footer extends Component {
 
   render() {
       return (
-        <p>&copy; Anne Thorsteinson, 2021</p>
+        <div id="footer">
+          <p>&copy; Anne Thorsteinson, 2021</p>
+        </div>
       )
   }
 
