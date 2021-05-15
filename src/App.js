@@ -1,8 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+// import cors from 'cors';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Form from './components/form/form.js'
 import Display from './components/display/display.js'
+
 import './App.scss';
 
 class App extends React.Component {
@@ -10,9 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      method: "",
+      method: "get",
       url: "",
-      display: false
+      display: false,
+      response: ''
     }
   }
 
@@ -26,13 +30,30 @@ class App extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    this.setState({ ...this.state, display: true});
+    switch(this.state.method) {
+      case 'delete':
+        console.log("delete");
+        break;
+      case 'post':
+        console.log("post");
+        break;
+      case 'put':
+        console.log("put");
+        break;
+      default: //default is get
+        axios({
+          method: 'get',
+          url: this.state.url,
+        })
+        .then(reply => {
+          this.setState({ ...this.state, response: reply });
+          this.setState({ ...this.state, display: true});
+        })
+        break;
+    }
   }
 
   render() {
-
-    // const display = this.state.display ?
-    //   (<Display method={this.state.method} url={this.state.url} />) : null;
 
     return (
       <>
@@ -41,8 +62,12 @@ class App extends React.Component {
           <Form handleUrlChange={this.handleUrlChange}
                 handleFormSubmit={this.handleFormSubmit}
                 tempUrl={this.state.url}
+                currMethod={this.state.method}
                 handleRadioClick={this.handleRadioClick}/>
-          <Display display={this.state.display} method={this.state.method} url={this.state.url} />
+          <Display display={this.state.display}
+                   method={this.state.method}
+                   response={this.state.response}
+                   url={this.state.url} />
         </div>
         <Footer />
       </>
