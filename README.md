@@ -16,7 +16,7 @@ When the user clicks the "Go" button, their selected method and URL entered will
 
 "get" is the default HTTP method selected, functionality is now added to make the get request and display the response headers, body, and count (if count is applicable to the data being returned). Here is an example result:
 
-![Sample Return of API get](./assets/resty-phase2)
+![Sample Return of API get](./assets/resty-phase2.png)
 
 ## UML Diagram of Current Working System
 
