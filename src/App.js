@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import cors from 'cors';
+import { Link } from 'react-router-dom'; 
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Form from './components/form/form.js'
