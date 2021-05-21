@@ -19,11 +19,8 @@ class App extends React.Component {
 
   handleStorage = (method, url) => {
     let key = `${method}-${url}`;
-    console.log("key", key);
-    console.log("state storage", this.state.storage);
     if (this.state.storage.find(value => value === key)) { return }
     var updStorage = this.state.storage.concat(key);
-    console.log("updated Storage", updStorage);
     this.setState({ ...this.state, storage: updStorage })
   }
 
@@ -42,7 +39,6 @@ class App extends React.Component {
       </Router>
     )
   }
-
 
 }
 

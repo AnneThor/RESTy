@@ -21,10 +21,10 @@ class Display extends Component {
     let display = !this.props.display ? null :
       (<>
         <div id="display-headers">
-          <p>Method: {this.props.method}</p>
+          <p data-testid="method">Method: {this.props.method}</p>
           <p>URL: {this.props.url}</p>
         </div>
-        <div id="display-results">
+        <div data-testid="json" id="display-results">
           <p>Headers:</p>
             <JSONPretty id="json-pretty" json={headers} theme={atelierSulphurpoolLight} />
           {displayCount}

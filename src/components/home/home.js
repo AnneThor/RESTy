@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Loader from 'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Form from '../form/form.js'
 import Input from '../input/input.js'
@@ -17,7 +19,8 @@ class Home extends React.Component {
       url: "",
       display: false,
       response: '',
-      body: ''
+      body: '',
+      spinner: false
     }
   }
 
@@ -30,7 +33,9 @@ class Home extends React.Component {
   }
 
   handleUrlClick = (e) => {
-    this.setState({ ...this.state, url: e.target.innerText });
+    let text = e.target.innerText;
+    let updUrl = text.substring(text.indexOf(' ')+1);
+    this.setState({ ...this.state, url: updUrl });
   }
 
   handleBodyChange = (e) => {
@@ -39,6 +44,7 @@ class Home extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    this.toggleSpinner();
     switch(false) {
       case (this.state.method === "get"):
         axios({
@@ -50,8 +56,10 @@ class Home extends React.Component {
           this.setState({ ...this.state, response: reply });
           this.setState({ ...this.state, display: true });
           this.setLocalStorage(this.state.method, this.state.url, reply);
+          this.toggleSpinner();
         })
         .catch(err => {
+          this.toggleSpinner();
           console.log(err, err.message);
         })
         break;
@@ -64,12 +72,20 @@ class Home extends React.Component {
           this.setState({ ...this.state, response: reply });
           this.setState({ ...this.state, display: true});
           this.setLocalStorage(this.state.method, this.state.url, reply)
+          this.toggleSpinner();
         })
         .catch(err => {
+          this.toggleSpinner();
           console.log(err, err.message);
         })
+        this.toggleSpinner();
         break;
     }
+  }
+
+  toggleSpinner = () => {
+    let updSpinner = this.state.spinner ? false : true;
+    this.setState({ ...this.state, spinner: updSpinner})
   }
 
   setLocalStorage = async (method, url, reply) => {
@@ -82,6 +98,9 @@ class Home extends React.Component {
   }
 
   render() {
+
+    const spinner = !this.state.spinner ? null :
+      <Loader type="Circles" color="00BFFF" height={80} width={80} />
 
     return (
       <div id="home">
@@ -97,11 +116,13 @@ class Home extends React.Component {
                   body={this.state.body}
                   handleBodyChange={this.handleBodyChange}/>
           }
-
+          {
+            spinner ||
           <Display display={this.state.display}
                    method={this.state.method}
                    response={this.state.response}
                    url={this.state.url} />
+                 }
       </div>
     )
   }

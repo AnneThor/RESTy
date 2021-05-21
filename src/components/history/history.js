@@ -15,7 +15,6 @@ class History extends React.Component {
           {
               this.props.keyIndex.map( (key, index) => {
                 let temp = JSON.parse(localStorage.getItem(key));
-                console.log("TEMP", temp);
                 return <li key={index}>{temp.method} {temp.url}</li>
             })
           }
