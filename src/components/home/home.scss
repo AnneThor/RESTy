@@ -1,0 +1,9 @@
+#home {
+  padding-top: 11vh;
+  display: grid;
+  grid-template-areas: "form form form form"
+                       "form form form form"
+                       "sidebar input input input"
+                       "sidebar display display display";
+  height: 100%;
+}

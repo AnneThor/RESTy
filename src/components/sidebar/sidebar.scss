@@ -1,9 +1,9 @@
 $button-color: #ddd;
 $text-color: #807a0a;
 
-#display {
-  grid-area: display;
-  text-align: center;
+#sidebar {
+  grid-area: sidebar;
+  text-align: left;
   margin: 1rem 1rem;
   border: .2rem solid $text-color;
   border-radius: .2rem;
@@ -14,18 +14,14 @@ $text-color: #807a0a;
   overflow-y: scroll;
   height: 50vh;
   max-height: 50vh;
-}
 
-#display-headers {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  h1 {
+    margin: 0 0;
+    padding: 0 0;
+  }
 
-#display-headers p {
-  margin: 2px 10px;
-}
-
-#display-results {
-  text-align: left;
+  ul {
+    list-style-type: none;
+    padding: 0 0 0 1rem;
+  }
 }

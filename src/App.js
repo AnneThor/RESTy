@@ -1,10 +1,9 @@
 import React from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
-import Form from './components/form/form.js'
-import Display from './components/display/display.js'
+import Home from './components/home/home.js';
+import History from './components/history/history.js'
 
 import './App.scss';
 
@@ -13,67 +12,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      method: "get",
-      url: "",
-      display: false,
-      response: ''
+      response: '',
+      storage: [],
     }
   }
 
-  handleRadioClick = (e) => {
-    this.setState({ ...this.state, method: e.target.value })
-  }
-
-  handleUrlChange = (e) => {
-    this.setState({ ...this.state, url: e.target.value });
-  }
-
-  handleFormSubmit = (e) => {
-    e.preventDefault();
-    switch(this.state.method) {
-      case 'delete':
-        console.log("delete");
-        break;
-      case 'post':
-        console.log("post");
-        break;
-      case 'put':
-        console.log("put");
-        break;
-      default: //default is get
-        axios({
-          method: 'get',
-          url: this.state.url,
-        })
-        .then(reply => {
-          this.setState({ ...this.state, response: reply });
-          this.setState({ ...this.state, display: true});
-        })
-        break;
-    }
+  handleStorage = (method, url) => {
+    let key = `${method}-${url}`;
+    if (this.state.storage.find(value => value === key)) { return }
+    var updStorage = this.state.storage.concat(key);
+    this.setState({ ...this.state, storage: updStorage })
   }
 
   render() {
 
     return (
-      <>
+      <Router>
         <Header />
-        <div id="body">
-          <Form handleUrlChange={this.handleUrlChange}
-                handleFormSubmit={this.handleFormSubmit}
-                tempUrl={this.state.url}
-                currMethod={this.state.method}
-                handleRadioClick={this.handleRadioClick}/>
-          <Display display={this.state.display}
-                   method={this.state.method}
-                   response={this.state.response}
-                   url={this.state.url} />
-        </div>
+        <Route id="body" exact path="/">
+          <Home handleHistory={this.handleStorage} keyIndex={this.state.storage}/>
+         </Route>
+         <Route exact path="/history">
+          <History keyIndex={this.state.storage}/>
+         </Route>
         <Footer />
-      </>
+      </Router>
     )
   }
-
 
 }
 
