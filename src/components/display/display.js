@@ -15,8 +15,8 @@ class Display extends Component {
       </>
     )
 
-    const headers = { headers : this.props.response.headers }
-    const data = { body: this.props.response.data }
+    const headers = this.props.response ? { headers : this.props.response.headers } : null
+    const data = this.props.response ? { body: this.props.response.data } : null
 
     let display = !this.props.display ? null :
       (<>

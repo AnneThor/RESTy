@@ -1,0 +1,30 @@
+$button-color: #ddd;
+$text-color: #807a0a;
+
+#input {
+  grid-area: input;
+  text-align: center;
+  margin: 1rem 1rem 0 1rem;
+  border: .2rem solid $text-color;
+  border-radius: .2rem;
+  padding: .4rem .4rem;
+  min-height: 15vh;
+  background-color: darken(ivory, 1.5%);
+  color: darken($text-color, 3%);
+  height: 15vh;
+  max-height: 15vh;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding: .2rem .2rem;
+  }
+
+  textarea {
+    min-height: 40%;
+    max-height: 40%;
+    padding: 2% 2%;
+
+  }
+
+}

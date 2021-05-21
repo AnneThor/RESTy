@@ -3,9 +3,9 @@ $button-color: #ddd;
 $text-color: #807a0a;
 
 #form {
+  grid-area: form;
   text-align: center;
-  width: 80%;
-  padding-left: 10vw;
+  width: 100%;
 }
 
 #form-url-input {
