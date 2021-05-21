@@ -4,7 +4,7 @@ RESTy is a web app that makes HTTP calls to an input url and then displays the r
 
 [Live Version @ Github Pages](https://annethor.github.io/RESTy/)
 
-## Functionality at Phase 2
+## Functionality at Phase Three
 
 To install the project, clone the repository locally and run ```npm i``` to install the necessary packages.
 
