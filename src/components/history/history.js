@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import HistoryItem from '../historyItem/historyItem.js'
 import './history.scss';
 
 class History extends React.Component {
@@ -11,14 +12,16 @@ class History extends React.Component {
     return (
       <div id="history">
         <h1>List of Sites Previously Visited</h1>
-        <ul>
           {
               this.props.keyIndex.map( (key, index) => {
                 let temp = JSON.parse(localStorage.getItem(key));
-                return <li key={index}>{temp.method} {temp.url}</li>
-            })
+                return <HistoryItem key={index}
+                                    method={temp.method}
+                                    url={temp.url}
+                                    body={temp.reply.data}
+                                    reload={this.props.handleReload} />
+              })
           }
-        </ul>
       </div>
     )
   }
