@@ -15,11 +15,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      method: "get",
-      url: "",
-      display: false,
-      response: '',
-      body: '',
+      method: this.props.method === "" ? this.props.method : "get", // was "get"
+      url: this.props.url, // was ''
+      display: this.props.display, // was false
+      response: this.props.body, // was ''
+      body: '', // was ''
       spinner: false
     }
   }
@@ -39,7 +39,8 @@ class Home extends React.Component {
   }
 
   handleBodyChange = (e) => {
-    this.setState({ ...this.state, body: e.target.value });
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
+    console.log(this.state.body)
   }
 
   handleFormSubmit = (e) => {

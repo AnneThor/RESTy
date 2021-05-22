@@ -1,3 +1,22 @@
+$button-color: #ddd;
+$text-color: #807a0a;
+$primary-color: #2d2625;
+
 #history {
+  margin: 11vh 1rem auto 1rem;
   padding-top: 11vh;
+  text-align: left;
+  border: .2rem solid $text-color;
+  border-radius: .2rem;
+  padding: .4rem .4rem;
+  min-height: 30vh;
+  background-color: darken(ivory, 1.5%);
+  color: darken($text-color, 3%);
+  overflow-y: scroll;
+  min-height: 70vh;
+  max-height: 70vh;
+
+  h1 {
+    color: $primary-color;
+  }
 }
