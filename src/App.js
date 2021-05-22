@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <Router>
         <Header />
-        <Route id="body" exact path="/resty">
+        <Route id="body" path="/">
           <Home handleHistory={this.handleStorage} keyIndex={this.state.storage}/>
          </Route>
          <Route exact path="/history">
