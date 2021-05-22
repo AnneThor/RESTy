@@ -1,8 +1,6 @@
 # RESTy
 
-RESTy is a web app that makes HTTP calls to an input url and then displays the response in pretty printed JSON in the right hand display window. RESTy also catalogs a list of previously listed sites (with the corresponding method) and users can click these to preload the URL field.
-
-The History Tab also contains a list format of the previous (unique) calls made to the RESTy system.
+RESTy is a web app that makes HTTP calls to an input url and then displays the response in pretty printed JSON in the right hand display window. RESTy also catalogs a list of previously listed sites (with the corresponding method) and users can click these to preload the URL field. The History Tab also contains a list format of the previous (unique) calls made to the RESTy system.
 
 [Live Version @ Github Pages](https://annethor.github.io/RESTy/)
 
@@ -37,8 +35,6 @@ And OF COURSE, there is now a spinner, that you may catch a glimpse of if your A
 ![UML Diagram of Current System](./assets/resty.png)
 
 ## Development History
-
-[Overview at Phase 3](./assets/PhaseThree.md)
 
 [Overview at Phase Two](./assets/PhaseTwo.md)
 
