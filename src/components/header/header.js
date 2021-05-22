@@ -7,9 +7,9 @@ class Header extends Component {
   render() {
       return (
         <div id="header">
-          <h1><Link to="/">RESTy</Link></h1>
+          <h1><Link to="/resty">RESTy</Link></h1>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/resty">Home</Link></li>
             <li><Link to="/history">History</Link></li>
           </ul>
         </div>
