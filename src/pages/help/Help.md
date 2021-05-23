@@ -6,8 +6,6 @@ The History Tab also contains a list format of the previous (unique) calls made 
 
 The help page is a rendering of this MD file.
 
-[Live Version @ Github Pages](https://annethor.github.io/RESTy/)
-
 ## Install and Operate RESTY
 
 To install the project, clone the repository locally and run ```npm i``` to install the necessary packages.
@@ -20,30 +18,10 @@ When the user clicks the "Go" button, their selected method and URL entered will
 
 "get" is the default HTTP method selected, functionality is now added to make the get request and display the response headers, body, and count (if count is applicable to the data being returned).
 
-Here is an example result:
-
-![Sample Return of API get](./assets/resty-phase2.png)
-
 `POST`, `PUT` and `DELETE` methods are now all fully functional, but require correct inputs from the user.
 
 For example, for a user to successfully send the body for a `POST` or `PUT` option, they will need to enter an object with properly formatted inputs into the input dialog (which only appears when the PUT and POST methods are selected). Please see a relevant example below:
 
-![proper post input](./assets/post-input.png)
-
-![outcome of proper post](./assets/post-result.png)
-
 And OF COURSE, there is now a spinner, that you may catch a glimpse of if your API is taking a particularly long time to load!
 
 The history page will show a list of all successful requests including the **method** and **url**; clicking these will toggle a display of the results from the call. They can take a limited amount of screen space, but an overflow y scroll is available.
-
-## UML Diagram of Current Working System
-
-![Final UML](./assets/Final-UML.png)
-
-## Development History
-
-[Overview at Phase 3](./assets/PhaseThree.md)
-
-[Overview at Phase Two](./assets/PhaseTwo.md)
-
-[Overview at Phase One](./assets/PhaseOne.md)
