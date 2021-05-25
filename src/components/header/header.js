@@ -9,7 +9,7 @@ class Header extends Component {
         <div id="header">
           <h1><Link to="/resty">RESTy</Link></h1>
           <ul>
-            <li><Link to="/resty">Home</Link></li>
+            <li><Link data-testid="home" to="/resty">Home</Link></li>
             <li><Link to="/history">History</Link></li>
             <li><Link to="/help">Help</Link></li>
           </ul>

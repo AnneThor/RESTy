@@ -5,7 +5,6 @@ import Footer from './components/footer/footer.js';
 import Home from './components/home/home.js';
 import History from './components/history/history.js'
 import Help from './pages/help/help.js'
-
 import './App.scss';
 
 class App extends React.Component {

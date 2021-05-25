@@ -29,6 +29,10 @@ test("renders title", async() => {
 
 test("can fetch data", async () => {
   render(<App />);
+
+  const home = screen.getByTestId("home");
+  fireEvent.click(home);
+
   const form = screen.getByTestId("urlForm");
   const url = screen.getByTestId("url");
   const radioGet = screen.getByTestId("get")

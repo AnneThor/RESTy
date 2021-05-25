@@ -15,7 +15,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      method: this.props.method === "" ? this.props.method : "get", // was "get"
+      method: "get", // was "get"
       url: this.props.url, // was ''
       display: this.props.display, // was false
       response: this.props.body, // was ''
